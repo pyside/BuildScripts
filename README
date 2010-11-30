@@ -19,7 +19,7 @@ Install build dependencies
 Build and install
 =================
 
-    ./build_all
+    ./build_and_install
 
 Updating to the latest version
 ==============================
