@@ -1,8 +1,23 @@
 
+Initial setup
+=============
 
+    git submodule init
+    git submodule update
+
+Build and install
+=================
+
+    ./build_all
 
 Updating to the latest version
 ==============================
 
     git submodule foreach git pull
+
+Working with the build
+======================
+
+    source /path/to/environment.sh
+    python /path/to/app.py
 
