@@ -1,0 +1,12 @@
+[submodule "apiextractor"]
+	path = apiextractor
+	url = git://gitorious.org/pyside/apiextractor.git
+[submodule "generatorrunner"]
+	path = generatorrunner
+	url = git://gitorious.org/pyside/generatorrunner.git
+[submodule "shiboken"]
+	path = shiboken
+	url = git://gitorious.org/pyside/shiboken.git
+[submodule "pyside"]
+	path = pyside
+	url = git://gitorious.org/pyside/pyside.git

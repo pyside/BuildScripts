@@ -1,0 +1,8 @@
+
+
+
+Updating to the latest version
+==============================
+
+    git submodule foreach git pull
+

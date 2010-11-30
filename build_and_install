@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+alldirs=("apiextractor" "generatorrunner" "shiboken" "pyside")
+
+if [ $# == 0 ] ; then
+    dirs=("${alldirs[@]}")
+else
+    dirs=("$@")
+fi
+
+for d in "${dirs[@]}" ; do
+    rm -rf "$d/build"
+    mkdir -p "$d/build"
+    (
+        source environment.sh
+        cd "$d/build"
+        cmake .. -DCMAKE_INSTALL_PREFIX=$PYSIDESANDBOXPATH -DCMAKE_BUILD_TYPE=Debug -DENABLE_ICECC=0 && make -j4 && make install || exit 1
+    ) # exit from "$d/build"
+done
+
