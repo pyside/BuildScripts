@@ -5,6 +5,17 @@ Initial setup
     git submodule init
     git submodule update
 
+Install build dependencies
+==========================
+
+    On MeeGo:
+
+        sudo ./dependencies.meego.sh
+
+    On Ubuntu:
+
+        sudo ./dependencies.ubuntu.sh
+
 Build and install
 =================
 
