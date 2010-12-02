@@ -21,6 +21,9 @@ Build and install
 
     ./build_and_install
 
+    By default, this will do a Release build. If you want to do a Debug
+    build, you have to uncomment the correct line in environment.sh
+
 Updating to the latest version
 ==============================
 

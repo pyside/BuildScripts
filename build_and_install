@@ -14,7 +14,7 @@ for d in "${dirs[@]}" ; do
     (
         source environment.sh
         cd "$d/build"
-        cmake .. -DCMAKE_INSTALL_PREFIX=$PYSIDESANDBOXPATH -DCMAKE_BUILD_TYPE=Debug -DENABLE_ICECC=0 && make -j4 && make install || exit 1
+        cmake .. -DCMAKE_INSTALL_PREFIX=$PYSIDESANDBOXPATH -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DENABLE_ICECC=0 && make -j4 && make install || exit 1
     ) # exit from "$d/build"
 done
 
