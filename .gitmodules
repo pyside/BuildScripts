@@ -10,3 +10,6 @@
 [submodule "pyside"]
 	path = pyside
 	url = git://gitorious.org/pyside/pyside.git
+[submodule "pyside-tools"]
+	path = pyside-tools
+	url = git://gitorious.org/pyside/pyside-tools.git

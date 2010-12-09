@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-alldirs=("apiextractor" "generatorrunner" "shiboken" "pyside")
+alldirs=("apiextractor" "generatorrunner" "shiboken" "pyside" "pyside-tools")
 
 if [ $# == 0 ] ; then
     dirs=("${alldirs[@]}")
