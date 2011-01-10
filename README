@@ -27,6 +27,7 @@ Build and install
 Updating to the latest version
 ==============================
 
+    git submodule foreach git checkout master
     git submodule foreach git pull
 
 Working with the build
