@@ -16,6 +16,10 @@ Install build dependencies
 
         sudo ./dependencies.ubuntu.sh
 
+    On Arch Linux:
+
+        sudo ./dependencies.arch.sh
+
 Build and install
 =================
 
