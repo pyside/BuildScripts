@@ -13,8 +13,27 @@ for d in "${dirs[@]}" ; do
     mkdir -p "$d/build"
     (
         source environment.sh
+
+        if [ "`uname -s`" == "Darwin" ]; then
+            # When running on Mac OS X, we need to specify the
+            # Qt include dir for the header files to be found.
+            echo "$0: Mac OS X detected (uname -s gave 'Darwin')."
+            PYSIDE_BS_CMAKE_FLAGS="-DALTERNATIVE_QT_INCLUDE_DIR=/Library/Frameworks/"
+        else
+            # On Non-OS X builds, we enable this to fix a gcc bug
+            PYSIDE_BS_CMAKE_FLAGS="-DENABLE_GCC_OPTIMIZATION=On"
+        fi
+
         cd "$d/build"
-        cmake .. -DCMAKE_INSTALL_PREFIX=$PYSIDESANDBOXPATH -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DENABLE_ICECC=0 -DENABLE_GCC_OPTIMIZATION=On && make -j4 && make install || exit 1
-    ) # exit from "$d/build"
+        cmake .. -DCMAKE_INSTALL_PREFIX=$PYSIDESANDBOXPATH \
+                 -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
+                 -DENABLE_ICECC=0 \
+                 $PYSIDE_BS_CMAKE_FLAGS \
+            && make -j4 && make install || exit 1
+    ) || exit 1
+
+    # If you are experiencing problems on OS X, uncomment the
+    # following line to update the run-time linker cache:
+    # sudo ldconfig
 done
 

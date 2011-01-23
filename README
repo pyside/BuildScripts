@@ -20,6 +20,20 @@ Install build dependencies
 
         sudo ./dependencies.arch.sh
 
+    On Mac OS X (using Homebrew):
+
+        sudo ./dependencies.osx.sh
+
+Additional dependencies for Mac OS X
+====================================
+
+    The dependencies script on Mac OS X does not install a C++ toolchain or
+    the Qt libraries. Instead, you should install Xcode and the Qt SDK
+    manually:
+
+        http://developer.apple.com/tools/xcode/
+        http://qt.nokia.com/downloads/sdk-mac-os-cpp
+
 Build and install
 =================
 
