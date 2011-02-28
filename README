@@ -42,6 +42,10 @@ Build and install
     By default, this will do a Release build. If you want to do a Debug
     build, you have to uncomment the correct line in environment.sh
 
+    If you want to build PySide against the Qt SDK, you have to set the
+    environment variable QT_SDK_HOME - this variable needs to be set before
+    "environment.sh" is sourced, and before "build_and_install" is run.
+
 Updating to the latest version
 ==============================
 
