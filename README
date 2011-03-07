@@ -24,6 +24,10 @@ Install build dependencies
 
         sudo ./dependencies.osx.sh
 
+    On Red Hat Linux, CentOS 6 and Fedora:
+
+        sudo ./dependencies.fedora.sh
+
 Additional dependencies for Mac OS X
 ====================================
 
