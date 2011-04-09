@@ -6,9 +6,12 @@ export BUILD_TYPE=Release
 # debugging version of Python installed and uncomment this line:
 #export BUILD_TYPE=Debug
 
+# Get the Python version as "pythonx.y", e.g. "python2.6"
+PYTHONXY=`python -V 2>&1 | sed -e 's/Python 2\.\([0-9]*\).*/python2.\1/'`
+
 export PYSIDESANDBOXPATH=$HOME/pkg/pyside-sandbox
 export PATH=$PYSIDESANDBOXPATH/bin:$PATH
-export PYTHONPATH=$PYSIDESANDBOXPATH/lib/python2.6/site-packages:$PYSIDESANDBOXPATH/lib64/python2.6/site-packages:$PYTHONPATH
+export PYTHONPATH=$PYSIDESANDBOXPATH/lib/$PYTHONXY/site-packages:$PYSIDESANDBOXPATH/lib64/$PYTHONXY/site-packages:$PYTHONPATH
 export LD_LIBRARY_PATH=$PYSIDESANDBOXPATH/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$PYSIDESANDBOXPATH/lib/pkgconfig:$PKG_CONFIG_PATH
 export DYLD_LIBRARY_PATH=$PYSIDESANDBOXPATH/lib:$DYLD_LIBRARY_PATH
