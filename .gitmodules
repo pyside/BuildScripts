@@ -1,15 +1,15 @@
 [submodule "apiextractor"]
 	path = apiextractor
-	url = git://gitorious.org/pyside/apiextractor.git
+	url = git://github.com/PySide/Apiextractor.git
 [submodule "generatorrunner"]
 	path = generatorrunner
-	url = git://gitorious.org/pyside/generatorrunner.git
+	url = git://github.com/PySide/Generatorrunner.git
 [submodule "shiboken"]
 	path = shiboken
-	url = git://gitorious.org/pyside/shiboken.git
+	url = git://github.com/PySide/Shiboken.git
 [submodule "pyside"]
 	path = pyside
-	url = git://gitorious.org/pyside/pyside.git
+	url = git://github.com/PySide/PySide.git
 [submodule "pyside-tools"]
 	path = pyside-tools
-	url = git://gitorious.org/pyside/pyside-tools.git
+	url = git://github.com/PySide/Tools.git
