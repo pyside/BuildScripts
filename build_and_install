@@ -24,6 +24,10 @@ for d in "${dirs[@]}" ; do
             PYSIDE_BS_CMAKE_FLAGS="-DENABLE_GCC_OPTIMIZATION=On"
         fi
 
+        if [ $Q_WS_SIMULATOR == "yes" ]; then
+            PYSIDE_BS_CMAKE_FLAGS=$PYSIDE_BS_CMAKE_FLAGS" -DQ_WS_SIMULATOR=yes"
+        fi
+
         cd "$d/build"
         cmake .. -DCMAKE_INSTALL_PREFIX=$PYSIDESANDBOXPATH \
                  -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
