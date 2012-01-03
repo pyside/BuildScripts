@@ -16,14 +16,20 @@ export LD_LIBRARY_PATH=$PYSIDESANDBOXPATH/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$PYSIDESANDBOXPATH/lib/pkgconfig:$PKG_CONFIG_PATH
 export DYLD_LIBRARY_PATH=$PYSIDESANDBOXPATH/lib:$DYLD_LIBRARY_PATH
 
+# If you want to use Qt Simulator, uncomment following line and set the
+# enviroment variable $QT_SDK_HOME to the directory that contains the Qt
+# tools for the Simulator platform (for example $HOME/qtsdk/Simulator/Qt/gcc/bin")
+
+#Q_WS_SIMULATOR="yes"
+
 # If you want to use Qt SDK, uncomment the following line, or set the
 # environment variable $QT_SDK_HOME in something like your ~/.profile
 
-#QT_SDK_HOME="$HOME/qtsdk-2010.05"
+#QT_SDK_HOME="$HOME/qtsdk/Desktop/Qt/474/gcc"
 
 if [ "$QT_SDK_HOME" != "" ]; then
   export PATH=$QT_SDK_HOME/bin:$QT_SDK_HOME/qt/bin:$PATH
   export LD_LIBRARY_PATH=$QT_SDK_HOME/lib:$LD_LIBRARY_PATH
-  export QTDIR=$QT_SDK_HOME/qt:$QTDIR
+  export QTDIR=$QT_SDK_HOME:$QT_SDK_HOME/qt:$QTDIR
 fi
 
