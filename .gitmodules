@@ -13,3 +13,6 @@
 [submodule "pyside-tools"]
 	path = pyside-tools
 	url = git://github.com/PySide/Tools.git
+[submodule "mobility"]
+	path = mobility
+	url = https://github.com/PySide/Mobility.git

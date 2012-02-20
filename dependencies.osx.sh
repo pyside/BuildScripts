@@ -22,5 +22,11 @@ EOF
   exit 1
 fi
 
-brew install cmake libxml2
+echo "Updating homebrew cache..."
+brew update
+
+for dependency in cmake libxml2; do
+    echo "Installing/upgrading dependency: $dependency"
+    brew install $dependency || brew upgrade $dependency
+done
 
