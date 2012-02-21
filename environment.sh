@@ -1,15 +1,25 @@
 #!/bin/sh
 
 export BUILD_TYPE=Release
+export PYSIDE_BUILDSCRIPTS_USE_PYTHON3=no
 
 # If you want to build a Debug release, make sure to have the
 # debugging version of Python installed and uncomment this line:
 #export BUILD_TYPE=Debug
 
-# Get the Python version as "pythonx.y", e.g. "python2.6"
-PYTHONXY=`python -V 2>&1 | sed -e 's/Python 2\.\([0-9]*\).*/python2.\1/'`
+# If you want to build against Python 3, uncomment this line:
+#export PYSIDE_BUILDSCRIPTS_USE_PYTHON3=yes
 
-export PYSIDESANDBOXPATH=$HOME/pkg/pyside-sandbox
+if [ "$PYSIDE_BUILDSCRIPTS_USE_PYTHON3" = "yes" ]; then
+    # Get the Python version as "pythonx.y", e.g. "python2.6"
+    PYTHONXY=`python3 -V 2>&1 | sed -e 's/Python \(3\.[0-9]*\).*/python\1/'`
+    export PYSIDESANDBOXPATH=$HOME/pkg/pyside-sandbox-python3
+else
+    # Get the Python version as "pythonx.y", e.g. "python2.6"
+    PYTHONXY=`python -V 2>&1 | sed -e 's/Python \(2\.[0-9]*\).*/python\1/'`
+    export PYSIDESANDBOXPATH=$HOME/pkg/pyside-sandbox
+fi
+
 export PATH=$PYSIDESANDBOXPATH/bin:$PATH
 export PYTHONPATH=$PYSIDESANDBOXPATH/lib/$PYTHONXY/site-packages:$PYSIDESANDBOXPATH/lib64/$PYTHONXY/site-packages:$PYTHONPATH
 export LD_LIBRARY_PATH=$PYSIDESANDBOXPATH/lib:$LD_LIBRARY_PATH

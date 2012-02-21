@@ -1,5 +1,20 @@
 #!/usr/bin/env bash
 
+source environment.sh
+
+cat <<EOF
+
+    === PySide BuildScripts Configuration ===
+
+    Installation prefix:    $PYSIDESANDBOXPATH
+    Build type:             $BUILD_TYPE
+    Target Python version:  $PYTHONXY
+    Build for Python 3:     $PYSIDE_BUILDSCRIPTS_USE_PYTHON3
+
+
+EOF
+
+
 alldirs=("apiextractor" "generatorrunner" "shiboken" "pyside" "pyside-tools" "mobility")
 
 if [ $# == 0 ] ; then
@@ -26,6 +41,10 @@ for d in "${dirs[@]}" ; do
 
         if [ "$Q_WS_SIMULATOR" == "yes" ]; then
             PYSIDE_BS_CMAKE_FLAGS=$PYSIDE_BS_CMAKE_FLAGS" -DQ_WS_SIMULATOR=yes"
+        fi
+
+        if [ "$PYSIDE_BUILDSCRIPTS_USE_PYTHON3" == "yes" ]; then
+            PYSIDE_BS_CMAKE_FLAGS=$PYSIDE_BS_CMAKE_FLAGS" -DUSE_PYTHON3=1"
         fi
 
         cd "$d/build"

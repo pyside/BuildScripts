@@ -50,6 +50,27 @@ Build and install
     environment variable QT_SDK_HOME - this variable needs to be set before
     "environment.sh" is sourced, and before "build_and_install" is run.
 
+Python 3 Support
+================
+
+    PySide now supports Python 3. To build PySide for Python 3 instead of
+    the default Python 2, uncomment the following line in "environment.sh":
+
+        #export PYSIDE_BUILDSCRIPTS_USE_PYTHON3=yes
+
+    This will use "python3" to determine the Python version and will also
+    take care of passing the right build arguments to Shiboken's CMake.
+
+    The buildscripts are configured so that the default installation path
+    for PySide will be different if PySide is compiled for Python 3. This
+    has the advantage that you can have PySide for Python 2 and 3 installed
+    without any conflicts.
+
+    Please note that some parts of PySide (notably pyside-tools and PySide
+    Mobility) are not yet able to handle Python 3 from the CMake scripts, so
+    they will still get built against Python 2 (PySide bugs 1148 and 1149).
+
+
 Updating to the latest version
 ==============================
 
