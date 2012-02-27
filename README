@@ -50,6 +50,12 @@ Build and install
     environment variable QT_SDK_HOME - this variable needs to be set before
     "environment.sh" is sourced, and before "build_and_install" is run.
 
+    If you don't want to build Qt Mobility bindings or PySide Tools, or if
+    you only want to rebuild a specific module, pass the modules you DO want
+    to build as command line arguments to ./build_and_install, e.g.:
+
+    ./build_and_install apiextractor generatorrunner shiboken pyside
+
 Python 3 Support
 ================
 
