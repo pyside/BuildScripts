@@ -1,14 +1,14 @@
 #!/bin/sh
 
+# To build a Debug release, make sure to have the debugging version
+# of Python installed:
+#export BUILD_TYPE=Debug
 export BUILD_TYPE?=Release
+
+# Whenever to build Python 3 or Python 2 version:
+#export PYSIDE_BUILDSCRIPTS_USE_PYTHON3=yes
 export PYSIDE_BUILDSCRIPTS_USE_PYTHON3?=no
 
-# If you want to build a Debug release, make sure to have the
-# debugging version of Python installed and uncomment this line:
-#export BUILD_TYPE=Debug
-
-# If you want to build against Python 3, uncomment this line:
-#export PYSIDE_BUILDSCRIPTS_USE_PYTHON3=yes
 
 if [ "$PYSIDE_BUILDSCRIPTS_USE_PYTHON3" = "yes" ]; then
     # Get the Python version as "pythonx.y", e.g. "python2.6"
