@@ -3,11 +3,16 @@
 # To build a Debug release, make sure to have the debugging version
 # of Python installed:
 #export BUILD_TYPE=Debug
-export BUILD_TYPE?=Release
+if [ -z "$BUILD_TYPE" ]; then
+  export BUILD_TYPE=Release
+fi
 
 # Whenever to build Python 3 or Python 2 version:
 #export PYSIDE_BUILDSCRIPTS_USE_PYTHON3=yes
-export PYSIDE_BUILDSCRIPTS_USE_PYTHON3?=no
+if [ -z "$PYSIDE_BUILDSCRIPTS_USE_PYTHON3" ]; then
+  export PYSIDE_BUILDSCRIPTS_USE_PYTHON3=no
+fi
+
 
 
 if [ "$PYSIDE_BUILDSCRIPTS_USE_PYTHON3" = "yes" ]; then
