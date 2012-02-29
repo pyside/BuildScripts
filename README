@@ -50,17 +50,16 @@ Build and install
     environment variable QT_SDK_HOME - this variable needs to be set before
     "environment.sh" is sourced, and before "build_and_install" is run.
 
-    If you want to build Qt Mobility bindings (or if you only want to
-    rebuild a specific module), pass the modules you want to build as
-    command line arguments to ./build_and_install, e.g.:
+    To build Qt Mobility bindings (or to rebuild a specific module), pass
+    the module names you want to build as command line arguments, e.g.:
 
     ./build_and_install mobility
 
 Python 3 Support
 ================
 
-    PySide now supports Python 3. To build PySide for Python 3 instead of
-    the default Python 2, uncomment the following line in "environment.sh":
+    By default scripts build PySide for Python 2. To build Python 3 version
+    uncomment the following line in "environment.sh":
 
         #export PYSIDE_BUILDSCRIPTS_USE_PYTHON3=yes
 
