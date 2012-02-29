@@ -1,7 +1,7 @@
 #!/bin/sh
 
-export BUILD_TYPE=Release
-export PYSIDE_BUILDSCRIPTS_USE_PYTHON3=no
+export BUILD_TYPE?=Release
+export PYSIDE_BUILDSCRIPTS_USE_PYTHON3?=no
 
 # If you want to build a Debug release, make sure to have the
 # debugging version of Python installed and uncomment this line:
