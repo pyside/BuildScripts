@@ -15,7 +15,7 @@ cat <<EOF
 EOF
 
 
-alldirs=("apiextractor" "generatorrunner" "shiboken" "pyside" "pyside-tools")
+alldirs=("shiboken" "pyside" "pyside-tools")
 
 if [ $# == 0 ] ; then
     dirs=("${alldirs[@]}")
