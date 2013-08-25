@@ -1,4 +1,3 @@
-
 Initial setup
 =============
 
@@ -27,6 +26,9 @@ Install build dependencies
     On Red Hat Linux, CentOS 6 and Fedora:
 
         sudo ./dependencies.fedora.sh
+        
+    On openSUSE:
+        sudo ./dependencies.opensuse.sh
 
 Additional dependencies for Mac OS X
 ====================================
