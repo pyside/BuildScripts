@@ -1,18 +1,18 @@
 [submodule "apiextractor"]
 	path = apiextractor
-	url = git://github.com/PySide/Apiextractor.git
+	url = https://github.com/PySide/Apiextractor.git
 [submodule "generatorrunner"]
 	path = generatorrunner
-	url = git://github.com/PySide/Generatorrunner.git
+	url = https://github.com/PySide/Generatorrunner.git
 [submodule "shiboken"]
 	path = shiboken
-	url = git://github.com/PySide/Shiboken.git
+	url = https://github.com/PySide/Shiboken.git
 [submodule "pyside"]
 	path = pyside
-	url = git://github.com/PySide/PySide.git
+	url = https://github.com/PySide/PySide.git
 [submodule "pyside-tools"]
 	path = pyside-tools
-	url = git://github.com/PySide/Tools.git
+	url = https://github.com/PySide/Tools.git
 [submodule "mobility"]
 	path = mobility
 	url = https://github.com/PySide/Mobility.git
